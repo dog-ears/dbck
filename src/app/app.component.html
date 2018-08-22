@@ -1,0 +1,20 @@
+
+<p id="scouter">戦闘力/到達戦闘力：<span class="current">{{scouter}}</span>/<span class="max">{{max_scouter}}</span></p>
+<p>CPS：{{cps}}/s</p>
+<p><a href="#" (click)="click()">click!</a></p>
+
+<ul id="item-list">
+  <ng-container *ngFor="let item of items" >
+    <li *ngIf="item.show<=max_scouter">
+      <a href="#" (click)="clickItem(item)" [class.enable]="item.cost<=scouter">
+        {{item.explain}}（コスト：{{item.cost}}、効果：{{item.cps}}/s、所持数：{{item.own}}個）
+      </a>
+    </li>
+  </ng-container>
+</ul>
+
+<ul id="event-list">
+  <ng-container *ngFor="let event of events.reverse()" >
+    <li *ngIf="event.show<=max_scouter">[{{event.show}}]{{event.explain}}</li>
+  </ng-container>
+</ul>

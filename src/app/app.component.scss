@@ -1,0 +1,59 @@
+$db_orange : #dc612f;
+
+#scouter{
+    font-size: 20px;
+    .current{
+        font-size: 50px;
+    }
+    .max{
+        font-size: 30px;
+    }
+}
+
+
+
+#item-list{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    li{
+        margin-top: 10px;
+        a{
+            display:inline-block;
+            border:1px solid #999;
+            border-radius: 3px;
+            padding:5px 10px;
+            color: #666;
+            text-decoration: none;
+            cursor: default;
+            transition: all 0.2s ease-out;
+
+            &.enable{
+                color: #FFF;
+                background-color: $db_orange;
+                cursor: pointer;
+                &:hover{
+                    opacity: 0.7;
+                }
+            }
+        }
+    }    
+}
+
+#event-list{
+    display:inline-block;
+    list-style: none;
+    padding: 10px;
+    margin: 30px 0 0;
+    overflow-y:auto;
+    max-height:200px;
+    border:1px solid #999;
+    li{
+        color: #CCC;
+        margin-top: 10px;
+        transition: all 0.2s ease-out;
+        &:nth-of-type(1){
+            color: #000;
+        }
+    }    
+}
